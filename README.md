@@ -3,6 +3,11 @@
 
 **Goal:** The primary goal is to build a web-based application that identifies interesting questions from discussions on web pages. This tool will serve as a proof of concept demonstrating capabilities in Python, Streamlit, and integrating advanced concepts such as knowledge graphs and generative AI. The project will also explore enterprise data cataloging techniques for organizing and managing the information gathered from the web.
 
+## Testing Git Action now!
+
+This is a test of updating this README and pushing it back to repo
+Let's see what happens...
+
 ## Architecture Diagram
 
 ![Architecture Diagram](/images/gq-diag.webp)
