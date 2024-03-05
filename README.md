@@ -5,6 +5,8 @@
 
 ## Architecture Diagram
 
+![Architecture Diagram](/images/gq-diag.webp)
+
 Please refer to the simplified, decluttered 2D architecture diagram previously provided. This diagram visually represents the structured organization of the application's components and the data flow between them.
 
 ## Components Description
