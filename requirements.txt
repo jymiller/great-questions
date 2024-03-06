@@ -5,3 +5,4 @@ openai
 streamlit
 NetworkX
 PyVis
+pandas
