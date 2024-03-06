@@ -40,3 +40,6 @@ The ultimate goal is to create an interactive tool that enables users to explore
 This project represents a step towards understanding the diverse and complex views on AI, facilitating informed discussions and research in the field. Contributions, feedback, and suggestions are welcome as we work towards making this tool a valuable resource for the AI community.
 
 
+ ## Schema Design
+
+Our project's schema design is documented in detail within the [SCHEMA.md](docs/SCHEMA.md) file. For a structured schema definition, see [schema_definition.yaml](schema/schema_definition.yaml).

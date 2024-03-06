@@ -1,0 +1,11 @@
+Title,Body
+Define Project Scope,"Outline the main goals, features, and limitations of the knowledge graph project."
+Research and Select Tools,"Decide on the Python libraries (e.g., NetworkX, PyVis) and any other tools (e.g., Streamlit) to be used."
+Schema Design for Knowledge Graph,"Define the entities (nodes) and relationships (edges) that the knowledge graph will include. This schema will serve as a blueprint for graph construction."
+Select or Design Question Framework,"Choose or design a question framework to structure the information within the knowledge graph. Consider frameworks like PICO or POLL as inspiration."
+Set Up Development Environment,"Prepare the development environment with the necessary libraries and tools installed. This may include setting up virtual environments, installing dependencies, and ensuring compatibility."
+Implement Basic Knowledge Graph Structure,"Start coding the basic structure of the knowledge graph using NetworkX. This involves initializing the graph and defining a simple mechanism for adding nodes and edges."
+Data Modeling According to Schema,"Implement the previously designed schema in code, creating functions to add nodes and edges according to the defined entities and relationships."
+Develop Data Input Mechanism,"Develop a method for manually or automatically inputting data into the graph. Consider the use of forms, scripts, or APIs for data ingestion."
+Integrate Graph Visualization Tool,"Integrate PyVis for graph visualization. Ensure the visualization is compatible with the graph structure and can be embedded in Streamlit."
+Develop Initial Streamlit Application,"Begin coding the Streamlit application. Focus on basic functionalities like displaying the graph and allowing basic user interactions."

@@ -1,0 +1,33 @@
+Entities:
+  PeopleGroups:
+    - Name: string
+    - Type: string # Individual or Group
+    - Affiliation: string
+    - AreaOfInterest: string
+  AITechnologies:
+    - Name: string
+    - Description: string
+    - ApplicationArea: string
+  Policies:
+    - Name: string
+    - Description: string
+    - ImpactArea: string
+  Viewpoints:
+    - Position: string # Pro, Con, Neutral
+    - Description: string
+  Questions:
+    - Text: string
+    - Category: string # Ethics, Practicality, Legality, etc.
+    - RelatedTechnology: string
+
+Relationships:
+  AdvocatesSupports:
+    Description: Indicates support for a viewpoint, AI technology, or policy.
+  Opposes:
+    Description: Indicates opposition to a viewpoint, AI technology, or policy.
+  Raises:
+    Description: A person or group raises a question about AI.
+  Addresses:
+    Description: Indicates that a policy, AI technology, or viewpoint addresses a specific question.
+  RelatedTo:
+    Description: Connects AI technologies to relevant policies or questions they impact.
