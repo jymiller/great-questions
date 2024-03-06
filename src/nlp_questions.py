@@ -12,8 +12,13 @@ def extract_questions(text):
         response = openai.chat.completions.create(
             model="gpt-3.5-turbo",  # Adjust according to the latest available models
             messages=[
-                {"role": "system", "content": "You are a helpful assistant."},
-                {"role": "user", "content": f"Extract all questions from the following text: {text}"}
+#                {"role": "system", "content": "You are a helpful assistant."},
+                 {"role": "system", "content": "You are a helpful assistant."},
+
+                # {"role": "user", "content": f"Extract all questions from the following text: {text}"}
+
+                # This prompt was generated through some back and forth with ChatGPT 3.5 and 4.0.  V4.0 refined the prompt to work with V3.5  which is cool
+                 {"role": "user", "content": f"Please read the provided article and extract only the direct questions that are aimed at prompting reflection or strategic thinking about an organization's future, capabilities, market adaptation, and service personalization. Focus on questions that challenge the reader to consider how advancements in AI could transform their organizational strategies, enable new possibilities, broaden their market reach, or enhance customization and personalization efforts. Ignore any direct questions that do not directly relate to these themes.: {text}"}
             ]
         )
  #       extracted_text = response.choices[0].message["content"]
