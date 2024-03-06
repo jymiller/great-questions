@@ -1,18 +1,20 @@
 # great-questions
 # Project Overview
 
-**Goal:** The primary goal is to build a web-based application that identifies interesting questions from discussions on web pages. This tool will serve as a proof of concept demonstrating capabilities in Python, Streamlit, and integrating advanced concepts such as knowledge graphs and generative AI. The project will also explore enterprise data cataloging techniques for organizing and managing the information gathered from the web.
+**Goal:** The initial goal is to build a web-based application that identifies interesting questions from discussions on web pages. This tool will serve as a proof of concept demonstrating capabilities in Python, Streamlit, and integrating advanced concepts such as knowledge graphs and generative AI. The project will also explore enterprise data cataloging techniques for organizing and managing the information gathered from the web. 
+The longer term goal is to build a framework that captures key questions of artificial intelligence (AI) and its societal implications by intertwining philosophical inquiry with the Socratic method, to foster a nuanced dialogue around AI technologies, policies, and ethics.
 
-## Testing Git Action now!
+## A Vision for AI and Human Interaction
 
-This is a test of updating this README and pushing it back to repo
-Let's see what happens...
+The reaction to the change that will come with AI is creating anxiety in our already complicated world. We aspire to make the interaction between AI and humanity more friendly.  And believe that by we can demystify AI, encouraging more people to participate in critical discussions about our joint future.  We aim to build a community where curiosity, critical thinking, and compassion allow for a better future.
 
 ## Architecture Diagram
 
+This is an example of what ChatGPT drew to explain the components of the solution.  Its just a start.  I'll ask it again in a few months and maybe it will make more sense!
+
 ![Architecture Diagram](/images/gq-diag.webp)
 
-Please refer to the simplified, decluttered 2D architecture diagram previously provided. This diagram visually represents the structured organization of the application's components and the data flow between them.
+"Please refer to the simplified, decluttered 2D architecture diagram previously provided. This diagram visually represents the structured organization of the application's components and the data flow between them." - ChatGPT
 
 ## Components Description
 
