@@ -1,33 +1,54 @@
-Entities:
-  PeopleGroups:
-    - Name: string
-    - Type: string # Individual or Group
-    - Affiliation: string
-    - AreaOfInterest: string
-  AITechnologies:
-    - Name: string
-    - Description: string
-    - ApplicationArea: string
-  Policies:
-    - Name: string
-    - Description: string
-    - ImpactArea: string
-  Viewpoints:
-    - Position: string # Pro, Con, Neutral
-    - Description: string
+QT-PIE_Framework:
   Questions:
-    - Text: string
-    - Category: string # Ethics, Practicality, Legality, etc.
-    - RelatedTechnology: string
+    description: Fundamental inquiries driving AI exploration.
+  Thinking:
+    description: Critical and philosophical thinking essential for addressing AI questions.
+  Positions:
+    description: Viewpoints held in response to AI questions.
+  Individuals:
+    description: People engaging in discourse, offering perspectives.
+  Evidence:
+    description: Data and examples supporting or challenging positions.
+
+# Example of implementing a QT-PIE entity in the knowledge graph
+Entities:
+  - type: Question
+    attributes:
+      text: "What are the ethical implications of AI in healthcare?"
+      category: "Ethics"
+  - type: Individual
+    attributes:
+      name: "Alex Doe"
+      affiliation: "Tech Ethics Group"
+      interests: "Ethical AI, Data Privacy"
+  - type: Position
+    attributes:
+      text: "AI should enhance, not replace, human decision-making in healthcare."
+      presentedBy: "Alex Doe"
+      evidence: "Several studies highlighting AI's supportive role in diagnostics."
 
 Relationships:
-  AdvocatesSupports:
-    Description: Indicates support for a viewpoint, AI technology, or policy.
-  Opposes:
-    Description: Indicates opposition to a viewpoint, AI technology, or policy.
   Raises:
-    Description: A person or group raises a question about AI.
-  Addresses:
-    Description: Indicates that a policy, AI technology, or viewpoint addresses a specific question.
-  RelatedTo:
-    Description: Connects AI technologies to relevant policies or questions they impact.
+    description: Links individuals to the questions they raise.
+    from: Individual
+    to: Question
+  Explores:
+    description: Connects questions to the thinking applied to them.
+    from: Question
+    to: Thinking
+  Holds:
+    description: Shows the positions held by individuals.
+    from: Individual
+    to: Position
+  Supports:
+    description: Links positions to supporting evidence.
+    from: Position
+    to: Evidence
+  Challenges:
+    description: Reflects contradictions or oppositions between positions or evidence.
+    from: Position, Evidence
+    to: Position, Evidence
+  Inspires:
+    description: Shows how thinking on one question can lead to new questions.
+    from: Thinking
+    to: Question
