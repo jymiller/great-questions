@@ -1,0 +1,11 @@
+Title,Body
+Setup the project environment and install dependencies, "Create a virtual environment for the project and install Streamlit along with any other necessary dependencies."
+Organize existing Python code into modules, "Ensure that the Python files (show_questions.py, add_node_edge.py, scrape_url.py) are structured as modules that can be imported and called from the main app (app.py)."
+Develop the main Streamlit application structure, "Build the main structure of the Streamlit application in app.py, including the sidebar for navigation and the main page overview."
+Integrate Show Questions page into the app, "Import and integrate the show_questions.py module into the main app, allowing it to be displayed when selected."
+Integrate Add Node/Edge page into the app, "Import and integrate the add_node_edge.py module into the main app, allowing it to be displayed when selected."
+Integrate Scrape URL page into the app, "Import and integrate the scrape_url.py module into the main app, allowing it to be displayed when selected."
+Test the Streamlit application thoroughly, "Run the Streamlit application and test each page to ensure everything is working as expected."
+Refine UI/UX based on initial testing feedback, "Refine the user interface and experience based on feedback received from initial testing."
+Document the code and usage instructions, "Ensure the project is well-documented, including comments in the code and a README with usage instructions."
+Deployment and final testing, "Consider options for deploying the Streamlit app and perform final testing to ensure everything works in the deployed environment."
