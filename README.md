@@ -40,7 +40,7 @@ Visualizes relationships between entities identified in the content. It consists
    - Graph Database
    - Visualization Tool
 
-[Knowledge Graph Project Details](/README_knowledgegraph.md)
+[Knowledge Graph Project Details](docs/README_knowledgegraph.md)
 
 ### 5. Cataloging System
 Organizes and classifies web pages and reports into a structured catalog. It encompasses:
