@@ -8,13 +8,16 @@ The longer term goal is to build a framework that captures key questions of arti
 
 The reaction to the change that will come with AI is creating anxiety in our already complicated world. We aspire to make the interaction between AI and humanity more friendly.  And believe that by we can demystify AI, encouraging more people to participate in critical discussions about our joint future.  We aim to build a community where curiosity, critical thinking, and compassion allow for a better future.
 
-## Architecture Diagram
+## Architecture Overview
 
-This is an example of what ChatGPT drew to explain the components of the solution.  Its just a start.  I'll ask it again in a few months and maybe it will make more sense!
+[docs/architecture_overview.md](docs/architecture_overview.md)
+
+<!-- This is an example of what ChatGPT drew to explain the components of the solution.  Its just a start.  I'll ask it again in a few months and maybe it will make more sense!
 
 ![Architecture Diagram](/images/gq-diag.webp)
 
-"Please refer to the simplified, decluttered 2D architecture diagram previously provided. This diagram visually represents the structured organization of the application's components and the data flow between them." - ChatGPT
+"Please refer to the simplified, decluttered 2D architecture diagram previously provided. This diagram visually represents the structured organization of the application's components and the data flow between them." - ChatGPT -->
+
 
 ## Components Description
 
