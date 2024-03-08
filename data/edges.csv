@@ -1,4 +1,4 @@
-source,target,relationship
-Individual1,Question1,raises
-Individual2,Question2,raises
-Individual3,Question3,raises
+from,to,title
+I1,Q1,Raises
+I1,P1,Holds
+P1,Q1,Supports

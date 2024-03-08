@@ -1,8 +1,5 @@
-id,type,name,interests
-Individual1,Individual,Alice,Ethical AI
-Question1,Question,What are the ethical implications of AI in healthcare?,
-Individual2,Individual,Bob,Accelerating AI
-Individual3,Individual,Charlie,Understanding AI
-Question2,Question,When will we get to AGI?,
-Question3,Question,What is your P(doom)?,
-Individual4,Individual,David,Job Loss
+id,label,title,color
+Q1,"Question: What are the ethical implications of AI in healthcare?","Category: Ethics",#FFC300
+I1,"Individual: Alex Doe","Affiliation: Tech Ethics Group\nInterests: Ethical AI, Data Privacy",#DAF7A6
+P1,"Position: AI should enhance, not replace, human decision-making in healthcare.","Presented by: Alex Doe",#C70039
+

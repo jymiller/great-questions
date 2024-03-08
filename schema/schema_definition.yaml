@@ -10,6 +10,32 @@ QT-PIE_Framework:
   Evidence:
     description: Data and examples supporting or challenging positions.
 
+Relationships:
+  Raises:
+    description: Links individuals to the questions they raise.
+    from: Individual
+    to: Question
+  Explores:
+    description: Connects questions to the thinking applied to them.
+    from: Question
+    to: Thinking
+  Holds:
+    description: Shows the positions held by individuals.
+    from: Individual
+    to: Position
+  Supports:
+    description: Links positions to supporting evidence.
+    from: Position
+    to: Evidence
+  Challenges:
+    description: Reflects contradictions or oppositions between positions or evidence.
+    from: Position, Evidence
+    to: Position, Evidence
+  Inspires:
+    description: Shows how thinking on one question can lead to new questions.
+    from: Thinking
+    to: Question
+
 # Example of implementing a QT-PIE entity in the knowledge graph
 Entities:
   - type: Question

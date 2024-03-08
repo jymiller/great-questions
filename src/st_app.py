@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 from pages import show_questions, add_node_edge, scrape_url
-
+ 
 # Attempt to fetch environment variables and test if they exist
 DATA_DIR = os.getenv('DATA_DIR')
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
