@@ -5,6 +5,23 @@ import webbrowser
 import os
 import csv
 
+# Attempt to fetch environment variables and test if they exist
+DATA_DIR = os.getenv('DATA_DIR')
+PROJECT_DIR = os.getenv('PROJECT_DIR')
+
+# Function to validate environment variables
+def validate_env_vars():
+    missing_vars = []
+    if not DATA_DIR:
+        missing_vars.append('DATA_DIRECTORY')
+    if not PROJECT_DIR:
+        missing_vars.append('PROJECT_DIR')
+    return missing_vars
+
+# File paths
+nodes_csv_path = os.path.join(DATA_DIR, 'nodes.csv')
+edges_csv_path = os.path.join(DATA_DIR, 'edges.csv')
+
 # Function definitions
 def add_node(graph, node_id, **attrs):
     graph.add_node(node_id, **attrs)
@@ -87,13 +104,15 @@ def main():
     # add_node(G, "Question1", type="Question", text="What are the ethical implications of AI in healthcare?")
     # add_edge(G, "Individual1", "Question1", relationship="raises")
     
-    # Paths to your CSV files
-    nodes_csv_path = 'nodes.csv'
-    edges_csv_path = 'edges.csv'
-
+    missing_vars = validate_env_vars()
+    if missing_vars:
+        st.error("Missing environment variables: " + ", ".join(missing_vars) + ". Please set these variables and restart the app.")
+        return   
+    
     # Add nodes and edges to the graph
     add_nodes_from_csv(G, nodes_csv_path)
     add_edges_from_csv(G, edges_csv_path)
+
 
 
     # Print the graph details

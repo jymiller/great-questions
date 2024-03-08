@@ -2,6 +2,27 @@ import streamlit as st
 import pandas as pd
 import os
 
+# Attempt to fetch environment variables and test if they exist
+DATA_DIR = os.getenv('DATA_DIR')
+PROJECT_DIR = os.getenv('PROJECT_DIR')
+
+# Function to validate environment variables
+def validate_env_vars():
+    missing_vars = []
+    if not DATA_DIR:
+        missing_vars.append('DATA_DIRECTORY')
+    if not PROJECT_DIR:
+        missing_vars.append('PROJECT_DIR')
+    return missing_vars
+
+missing_vars = validate_env_vars()
+if missing_vars:
+    st.error("Missing environment variables: " + ", ".join(missing_vars) + ". Please set these variables and restart the app.")
+
+# File paths
+nodes_file_path = os.path.join(DATA_DIR, 'nodes.csv')
+edges_file_path = os.path.join(DATA_DIR, 'edges.csv')
+
 # Helper functions for CSV operations
 def read_csv_data(file_path):
     return pd.read_csv(file_path) if os.path.isfile(file_path) else pd.DataFrame()
@@ -9,12 +30,14 @@ def read_csv_data(file_path):
 def save_csv_data(df, file_path):
     df.to_csv(file_path, index=False)
 
-# Initialize the app
-st.title("QT-PIE Knowledge Graph Editor")
+def validate_env_vars():
+    # Add your validation logic here
+    pass
 
-# File paths
-nodes_file_path = 'nodes.csv'
-edges_file_path = 'edges.csv'
+# Initialize the app
+st.title("Knowledge Graph Editor")
+
+
 
 # Load existing data into DataFrames
 nodes_df = read_csv_data(nodes_file_path)
