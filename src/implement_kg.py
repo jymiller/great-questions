@@ -21,6 +21,8 @@ def validate_env_vars():
 # File paths
 nodes_csv_path = os.path.join(DATA_DIR, 'nodes.csv')
 edges_csv_path = os.path.join(DATA_DIR, 'edges.csv')
+output_file_path = os.path.join(DATA_DIR, 'qt_pie_graph.html')
+
 
 # Function definitions
 def add_node(graph, node_id, **attrs):
@@ -60,7 +62,7 @@ def visualize_graph_interactive(graph):
     # net.show("qt_pie_graph.html")
         
     # Instead of using net.show(), directly save the graph to an HTML file
-    output_file_path = "qt_pie_graph.html"
+
     net.save_graph(output_file_path)
     print(f"Graph saved to {output_file_path}. Please open this file in a web browser to view the graph.")
 
