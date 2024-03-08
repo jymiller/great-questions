@@ -1,3 +1,6 @@
+"""
+This is the latest working Graph Visualization script. It fetches environment variables, loads graph data from CSV files, creates a NetworkX graph, and visualizes the graph using pyvis. The graph is saved to an HTML file and opened in a web browser for viewing.
+"""
 from pyvis.network import Network
 import networkx as nx
 import webbrowser
@@ -22,7 +25,7 @@ def fetch_env_vars():
 
     return {"DATA_DIR": data_dir, "PROJECT_DIR": project_dir}
 
-def load_graph_data(data_dir):
+def load_graph_data_vis(data_dir):
     """
     Load graph data from CSV files located in the specified data directory.
     Returns entities and relationships as lists of dictionaries.
@@ -64,6 +67,8 @@ def create_graph(entities, relationships):
     Create and return a NetworkX graph from entities and relationships.
     """
     G = nx.DiGraph()
+    print(entities)
+    print(relationships)
     for entity in entities:
         G.add_node(entity["id"], label=entity["label"], title=entity["title"], color=entity["color"])
     for rel in relationships:
@@ -91,7 +96,7 @@ def main():
     output_file_path = os.path.join(env_vars['DATA_DIR'], 'knowledge_graph.html')
     data_dir = env_vars['DATA_DIR']  # Fetch the data directory from environment variables
 
-    entities, relationships = load_graph_data(data_dir)
+    entities, relationships = load_graph_data_vis(data_dir)
     G = create_graph(entities, relationships)
     visualize_graph(G, output_file_path)
 

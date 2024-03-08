@@ -1,5 +1,11 @@
 id,label,title,color
 Q1,"Question: What are the ethical implications of AI in healthcare?","Category: Ethics",#FFC300
-I1,"Individual: Alex Doe","Affiliation: Tech Ethics Group\nInterests: Ethical AI, Data Privacy",#DAF7A6
+Q2,"Question: Can AI surpass human creativity?","Category: Creativity",#FF5733
+T1,"Thinking: Critical analysis on AI creativity","Field: Philosophy",#33C1FF
+T2,"Thinking: Ethical considerations in AI healthcare decisions","Field: Ethics",#33C1FF
 P1,"Position: AI should enhance, not replace, human decision-making in healthcare.","Presented by: Alex Doe",#C70039
-
+P2,"Position: AI has the potential to be more creative than humans.","Presented by: Sam Lee",#900C3F
+I1,"Individual: Alex Doe","Affiliation: Tech Ethics Group\nInterests: Ethical AI, Data Privacy",#DAF7A6
+I2,"Individual: Sam Lee","Affiliation: AI Creativity Lab\nInterests: AI in Arts",#DAF7A6
+E1,"Evidence: AI-generated artwork wins competition.","Source: ArtReview Magazine",#FFFF66
+E2,"Evidence: Study shows AI diagnostics more accurate than doctors.","Source: HealthTech Journal",#FFFF66

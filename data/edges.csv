@@ -2,3 +2,12 @@ from,to,title
 I1,Q1,Raises
 I1,P1,Holds
 P1,Q1,Supports
+I2,Q2,Raises
+I2,P2,Holds
+P2,Q2,Supports
+Q1,T2,Explores
+Q2,T1,Explores
+P1,E2,Supports
+P2,E1,Supports
+E2,P1,Challenges
+T1,Q2,Inspires
