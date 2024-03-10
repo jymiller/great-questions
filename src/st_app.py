@@ -1,11 +1,17 @@
 import streamlit as st
 import os
+import openai
 import webbrowser
 import csv
+import requests
+from bs4 import BeautifulSoup 
 import networkx as nx
 from pyvis.network import Network
 from PIL import Image
 from pages import show_questions, add_node_edge, scrape_url
+# Load your API key from an environment variable
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
 
 # Attempt to fetch environment variables and test if they exist
 DATA_DIR = os.getenv('DATA_DIR')
@@ -170,6 +176,84 @@ def show_vis():
     G = create_graph(entities, relationships)
     visualize_graph(G, output_file_path)
 
+# -------------------
+# Web Scraping Section
+# -------------------
+def fetch_page(url):
+    """Fetch the HTML content of the specified URL"""
+    try:
+        response = requests.get(url)
+        response.raise_for_status()  # Raises an HTTPError if the response status code is 4XX/5XX
+        return response.text
+    except requests.RequestException as e:
+        print(f"Error fetching {url}: {e}")
+        return None
+
+# -------------------
+# Parsing Section
+# -------------------
+def parse_content(html_content):
+    """Parse the fetched HTML content and extract relevant information"""
+    # Example: extracting all paragraph texts
+    soup = BeautifulSoup(html_content, 'html.parser')
+    paragraphs = [p.text for p in soup.find_all('p')]
+    return paragraphs
+
+def extract_questions(text):
+    """
+    Uses OpenAI's API to extract questions from the given text.
+    """
+    try:
+        response = openai.chat.completions.create(
+            model="gpt-3.5-turbo",  # Adjust according to the latest available models
+            messages=[
+#                {"role": "system", "content": "You are a helpful assistant."},
+                 {"role": "system", "content": "You are a helpful assistant."},
+
+                # {"role": "user", "content": f"Extract all questions from the following text: {text}"}
+
+                # This prompt was generated through some back and forth with ChatGPT 3.5 and 4.0.  V4.0 refined the prompt to work with V3.5  which is cool
+                 {"role": "user", "content": f"Please read the provided article and extract only the direct questions that are aimed at prompting reflection or strategic thinking about an organization's future, capabilities, market adaptation, and service personalization. Focus on questions that challenge the reader to consider how advancements in AI could transform their organizational strategies, enable new possibilities, broaden their market reach, or enhance customization and personalization efforts. Ignore any direct questions that do not directly relate to these themes.: {text}"}
+            ]
+        )
+ #       extracted_text = response.choices[0].message["content"]
+#        extracted_text = response["choices"][0]["message"]["content"]
+        extracted_text = response.choices[0].message.content
+        return extracted_text.strip()
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return None
+
+def scrape_question_page():
+    """"Function to scrape the question page"""
+    # Define the URL of the page you want to scrape
+    st.title("Scrape URL")
+    st.write("This page allows users to scrape data from a specified URL.")
+    # Example input for URL
+    url = st.text_input("Enter the URL to scrape")
+    scrape_button = st.button("Scrape")
+    if scrape_button:
+        st.write(f"Scraping data from: {url}")
+    # Add your code here to perform the web scraping
+    
+    # Step 1: Fetch the page
+    html_content = fetch_page(url)
+
+    if html_content:
+        # Step 2: Parse the page
+        extracted_data = parse_content(html_content)
+
+        # Step 3: Process the extracted data (TODO)
+        # This is where you might save data to a file, analyze it, or perform other processing.
+        # For demonstration, we'll just print the extracted paragraph texts.
+        for paragraph in extracted_data:
+            st.write(paragraph)
+
+    questions = extract_questions(extracted_data)
+    st.write("Extracted Questions:")
+    st.write(questions)
+           
+
 
 # Main app function
 def main():
@@ -190,7 +274,7 @@ def main():
     elif page == 'Show Visualization':
         show_vis()
     elif page == 'Scrape URL':
-        scrape_url.display_page()
+        scrape_question_page()
         
 if __name__ == "__main__":
     main()
