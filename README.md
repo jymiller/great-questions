@@ -1,6 +1,6 @@
 # Great-Questions
 
-[images/image on agp.png](images/image on agp.png)
+[images/overview_image.png](images/overview_image.png)
 
 # Demo
 1. Go to project dir
