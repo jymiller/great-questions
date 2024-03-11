@@ -1,4 +1,18 @@
-# great-questions
+# Great-Questions
+
+# Demo
+1. Go to project dir
+/Users/johnmiller/Library/Mobile Documents/com~apple~CloudDocs/200 source/great-questions
+
+2. Setup environment vars
+. scripts/setup_project_env.sh
+
+3. Setup python env
+. venv_gq/bin/activate
+
+4. Run the app
+streamlit run src/st_app.py
+
 # Project Overview
 
 **Goal:** The initial goal is to build a web-based application that identifies interesting questions from discussions on web pages. This tool will serve as a proof of concept demonstrating capabilities in Python, Streamlit, and integrating advanced concepts such as knowledge graphs and generative AI. The project will also explore enterprise data cataloging techniques for organizing and managing the information gathered from the web. 
