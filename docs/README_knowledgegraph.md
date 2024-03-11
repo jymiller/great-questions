@@ -42,4 +42,4 @@ This project represents a step towards understanding the diverse and complex vie
 
  ## Schema Design
 
-Our project's schema design is documented in detail within the [SCHEMA.md](docs/SCHEMA.md) file. For a structured schema definition, see [schema_definition.yaml](schema/schema_definition.yaml).
+Our project's schema design is documented in detail within the [SCHEMA.md](SCHEMA.md) file. For a structured schema definition, see [schema_definition.yaml](../schema/schema_definition.yaml).
